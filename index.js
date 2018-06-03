@@ -1,7 +1,7 @@
 var castv2 = require('castv2-client');
 var tts = require('google-tts-api');
 
-var GoogleHomePromise = function(ip, language, speed) {
+var GoogleHomePlayer = function(ip, language, speed) {
   var self = this;
 
   this.ip = ip;
@@ -16,7 +16,7 @@ var GoogleHomePromise = function(ip, language, speed) {
     });
   };
 
-  this.play = function(url) {
+  this.play = function(url, contentType) {
     return new Promise(function(resolve, reject) {
       var client = new castv2.Client();
 
@@ -42,7 +42,7 @@ var GoogleHomePromise = function(ip, language, speed) {
 
           var media = {
             contentId: url,
-            contentType: 'audio/mp3',
+            contentType: contentType || 'audio/mp3',
             streamType: 'BUFFERED'
           };
 
@@ -58,4 +58,4 @@ var GoogleHomePromise = function(ip, language, speed) {
   };
 };
 
-module.exports = GoogleHomePromise;
+module.exports = GoogleHomePlayer;
