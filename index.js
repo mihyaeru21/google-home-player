@@ -5,8 +5,8 @@ var GoogleHomePlayer = function(ip, language, speed) {
   var self = this;
 
   this.ip = ip;
-  this.language = language;
-  this.speed = speed;
+  this.language = language || 'en';
+  this.speed = speed || 1;
 
   this.say = function(text, language, speed) {
     language = language || self.language;
