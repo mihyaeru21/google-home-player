@@ -2,6 +2,7 @@ google-home-player
 ==================
 
 Play a sound or say a text on Google Home.
+This is an alternative implementation of [google-home-notifier](https://www.npmjs.com/package/google-home-notifier) by using Promise.
 
 ## Usage
 
@@ -37,5 +38,7 @@ const example = async () => {
   console.log('done');
 };
 
-example();
+example().catch(err => {
+  console.error(err);
+});
 ```
