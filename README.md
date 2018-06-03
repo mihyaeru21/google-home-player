@@ -27,3 +27,15 @@ googleHome
   });
 ```
 
+## Usage with async/await
+
+```js
+const example = async () => {
+  await googleHome.say('first text');
+  await googleHome.say('second text', 'ja', 0.5);
+  await googleHome.say('final text');
+  console.log('done');
+};
+
+example();
+```
