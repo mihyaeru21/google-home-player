@@ -15,5 +15,13 @@
   "devDependencies": {},
   "keywords": [
     "google home"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihyaeru21/google-home-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mihyaeru21/google-home-player/issues"
+  },
+  "homepage": "https://github.com/mihyaeru21/google-home-player#readme"
 }
