@@ -1,0 +1,19 @@
+{
+  "name": "google-home-player",
+  "version": "1.0.0",
+  "description": "Play a sound or say a text on Google Home.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mihyaeru <mihyaeru21@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "castv2-client": "^1.2.0",
+    "google-tts-api": "0.0.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "google home"
+  ]
+}
