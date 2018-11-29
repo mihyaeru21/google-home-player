@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "castv2-client": "^1.2.0",
-    "google-tts-api": "^0.0.3"
+    "google-tts-api": "^0.0.4"
   },
   "devDependencies": {},
   "keywords": [
