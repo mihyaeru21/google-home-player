@@ -1,6 +1,6 @@
 {
   "name": "google-home-player",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Play a sound or say a text on Google Home.",
   "main": "index.js",
   "scripts": {
