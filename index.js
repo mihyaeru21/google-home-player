@@ -4,26 +4,29 @@ var tts = require('google-tts-api');
 /**
  * @param {string} ip Google Home's ip address
  * @param {string} [language] default: 'en'
- * @param {number} [speed] default: 1
+ * @param {boolean} [slow] default: false
  */
-var GoogleHomePlayer = function(ip, language, speed) {
+var GoogleHomePlayer = function(ip, language, slow) {
   var self = this;
 
   this.ip = ip;
   this.language = language || 'en';
-  this.speed = speed || 1;
+  this.slow = slow || false;
 
   /**
    * @param {string} text a text to play
    * @param {string} [language] default: this.language
-   * @param {number} [speed] default: this.speed
+   * @param {boolean} [slow] default: this.slow
    * @return {Promise<void>}
    */
-  this.say = function(text, language, speed) {
+  this.say = function(text, language, slow) {
     language = language || self.language;
-    speed = speed || self.speed;
-    return tts(text, language, speed).then(function(url) {
-      return self.play(url);
+    slow = slow || self.slow;
+    return new Promise((resolve, reject) => {
+      var url = tts.getAudioUrl(text, { lang: language, slow: slow });
+      self.play(url).then(() => {
+        resolve();
+      });
     });
   };
 
