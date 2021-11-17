@@ -22,12 +22,8 @@ var GoogleHomePlayer = function(ip, language, slow) {
   this.say = function(text, language, slow) {
     language = language || self.language;
     slow = slow || self.slow;
-    return new Promise((resolve, reject) => {
-      var url = tts.getAudioUrl(text, { lang: language, slow: slow });
-      self.play(url).then(() => {
-        resolve();
-      });
-    });
+    var url = tts.getAudioUrl(text, { lang: language, slow: slow });
+    return self.play(url);
   };
 
   /**
